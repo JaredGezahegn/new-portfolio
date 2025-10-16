@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Frontend Developer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #1a0033, #000d33);
+      --card-bg: #111;
+      --text-color: #fff;
+      --nav-bg: rgba(0,0,0,0.8);
+    }
+
+    body.light-mode {
+      --bg-gradient: linear-gradient(135deg, #f0f0f0, #d9e4f5);
+      --card-bg: #fff;
+      --text-color: #000;
+      --nav-bg: rgba(255,255,255,0.8);
+    }
+
+    body {
+      background: var(--bg-gradient);
+      color: var(--text-color);
+      scroll-behavior: smooth;
+      transition: background 0.4s, color 0.4s;
+    }
+
+    .navbar {
+      background: var(--nav-bg);
+      transition: background 0.4s;
+    }
+
+    .navbar-brand, .nav-link {
+      color: var(--text-color) !important;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .skill-btn {
+      margin: 0.3rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      color: var(--text-color);
+      border: 1px solid #333;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #0d6efd;
+    }
+
+    .project-description {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      font-size: 0.9rem;
+      text-align: center;
+      border-radius: 0 0 10px 10px;
+    }
+
+    body.light-mode .project-description {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    footer {
+      background: #000;
+      padding: 20px 0;
+      transition: background 0.4s;
+    }
+
+    body.light-mode footer {
+      background: #e0e0e0;
+    }
+
+    footer a {
+      color: #0d6efd;
+      margin: 0 10px;
+      font-size: 1.5rem;
+    }
+
+    footer a:hover {
+      color: var(--text-color);
+    }
+
+    /* Toggle button */
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: var(--text-color);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .theme-toggle:hover {
+      color: #0d6efd;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">MyPortfolio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item">
+          <button class="theme-toggle ms-3" id="themeToggle" title="Toggle Dark/Light Mode">
+            <i class="bi bi-moon-fill"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Home Section -->
+<section id="home" class="d-flex align-items-center">
+  <div class="container text-center text-lg-start">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="hero-title">Frontend Developer</h1>
+        <p>I build responsive, modern websites using JavaScript, Tailwind, and React.</p>
+        <div>
+          <button class="btn btn-outline-primary skill-btn">React</button>
+          <button class="btn btn-outline-success skill-btn">JavaScript</button>
+          <button class="btn btn-outline-info skill-btn">Bootstrap</button>
+          <button class="btn btn-outline-warning skill-btn">Tailwind</button>
+        </div>
+        <div class="mt-3">
+          <a href="#portfolio" class="btn btn-primary me-2">Projects</a>
+          <a href="#contact" class="btn btn-outline-light">Contact</a>
+        </div>
+      </div>
+      <div class="col-lg-6 text-center">
+        <img src="mine.png" alt="Developer" class="img-fluid rounded shadow" loading="lazy" style="max-width: 250px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="bg-dark">
+  <div class="container text-center">
+    <h2 class="mb-4">About Me</h2>
+    <p>Hi, I’m Yared Gezahegn, <br/> A passionate frontend developer with a focus on React.js and modern web technologies. I enjoy building clean, responsive, and user-friendly web applications. When I’m not coding, I like exploring new tech trends and creating projects that solve real problems.</p>
+    <div class="mt-3">
+      <a href="CV.pdf" class="btn btn-primary me-2">Download CV</a>
+      <a href="#portfolio" class="btn btn-outline-light">View Projects</a>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h3>4+</h3>
+          <p>Total Projects</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h3>1</h3>
+          <p>Certificates</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h3>1+</h3>
+          <p>Years Experience</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Section -->
+<section id="portfolio">
+  <div class="container">
+    <h2 class="text-center mb-4">Portfolio</h2>
+    <div class="row">
+      <!-- Project 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/amazon.png" class="card-img-top" alt="Cafe Website">
+          <div class="project-description">
+            A static HTML project for a cafe website with responsive layout and modern design.
+          </div>
+          <div class="card-body text-center">
+            <a href="https://github.com/JaredGezahegn/AmaZone-Cafe" class="btn btn-outline-primary">View</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/to-do.png" class="card-img-top" alt="To-Do List App">
+          <div class="project-description">
+            A simple To-Do list app using HTML, CSS, and JavaScript with local storage support.
+          </div>
+          <div class="card-body text-center">
+            <a href="https://github.com/JaredGezahegn/JS-practice-To-Do-List" class="btn btn-outline-primary">View</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/ja.png" class="card-img-top" alt="Haile Selassie Project">
+          <div class="project-description">
+            A historical HTML project focused on Emperor Haile Selassie’s legacy.
+          </div>
+          <div class="card-body text-center">
+            <a href="https://github.com/JaredGezahegn/project2" class="btn btn-outline-primary">View</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="img/All-movie.png" class="card-img-top" alt="Haile Selassie Project">
+          <div class="project-description">
+           A React.js web application that lets users search movies, view details, and enjoy a clean movie listing interface using the OMDB API.
+          </div>
+          <div class="card-body text-center">
+            <a href="https://github.com/JaredGezahegn/movie_react_app.git" class="btn btn-outline-primary">View</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="bg-dark">
+  <div class="container">
+    <h2 class="text-center mb-4">Contact Me</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <form>
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Name">
+          </div>
+          <div class="mb-3">
+            <input type="email" class="form-control" placeholder="Email">
+          </div>
+          <div class="mb-3">
+            <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <form>
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Name">
+          </div>
+          <div class="mb-3">
+            <textarea class="form-control" rows="4" placeholder="Comment"></textarea>
+          </div>
+          <div class="mb-3">
+            <input type="file" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-outline-light">Post Comment</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center">
+  <p>Connect with me:</p>
+  <a href="https://github.com/JaredGezahegn"><i class="bi bi-github"></i></a>
+  <a href="https://www.linkedin.com/in/yared-gezahegn-224368388/"><i class="bi bi-linkedin"></i></a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  // 🌙 Dark/Light Mode Toggle
+  const toggleBtn = document.getElementById('themeToggle');
+  const currentTheme = localStorage.getItem('theme');
+
+  if (currentTheme === 'light') {
+    document.body.classList.add('light-mode');
+    toggleBtn.innerHTML = '<i class="bi bi-sun-fill"></i>';
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    const isLight = document.body.classList.contains('light-mode');
+    toggleBtn.innerHTML = isLight ? '<i class="bi bi-sun-fill"></i>' : '<i class="bi bi-moon-fill"></i>';
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  });
+
+  // 💌 Initialize EmailJS
+  (function(){
+    emailjs.init("3fJbP1acWUm4ct5RG");  // ✅ your public key
+  })();
+
+  // 💬 Contact Form Handler
+  const contactForm = document.querySelector("#contact form");
+
+  // create message container
+  const messageBox = document.createElement("div");
+  messageBox.style.marginTop = "15px";
+  contactForm.appendChild(messageBox);
+
+  contactForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // clear old messages
+    messageBox.innerHTML = "";
+
+    const params = {
+      from_name: this.querySelector('input[placeholder="Name"]').value,
+      from_email: this.querySelector('input[placeholder="Email"]').value,
+      message: this.querySelector('textarea[placeholder="Message"]').value
+    };
+
+    // show loading text
+    messageBox.innerHTML = `<div class="text-info">Sending message...</div>`;
+
+    emailjs.send("service_lg1u5l6", "template_o4h08r9", params)
+      .then(() => {
+        messageBox.innerHTML = `<div class="text-success">✅ Your message has been sent successfully!</div>`;
+        this.reset();
+      })
+      .catch((err) => {
+        console.error("❌ Failed to send message:", err);
+        messageBox.innerHTML = `<div class="text-danger">⚠️ Oops! Something went wrong. Please try again later.</div>`;
+      });
+  });
+</script>
+
+</body>
+</html>
