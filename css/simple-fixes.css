@@ -1,0 +1,123 @@
+/* Simple Dark Mode Fixes */
+/* Dark mode (default) */
+body {
+  background: linear-gradient(135deg, #0f0f23 0%, #1a0033 50%, #000d33 100%);
+  color: #ffffff !important;
+}
+
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  color: #ffffff !important;
+}
+
+body p,
+body .lead,
+body .card-text {
+  color: #b8c5d6 !important;
+}
+
+body .text-muted {
+  color: #8892b0 !important;
+}
+
+body .card {
+  background-color: #1a1a2e;
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+body .navbar {
+  background: rgba(15, 15, 35, 0.95) !important;
+}
+
+body .navbar-brand,
+body .nav-link {
+  color: #ffffff !important;
+}
+
+/* Light mode */
+body.light-mode {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+  color: #1e293b !important;
+}
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4,
+body.light-mode h5,
+body.light-mode h6 {
+  color: #1e293b !important;
+}
+
+body.light-mode p,
+body.light-mode .lead,
+body.light-mode .card-text {
+  color: #475569 !important;
+}
+
+body.light-mode .text-muted {
+  color: #64748b !important;
+}
+
+body.light-mode .card {
+  background-color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #1e293b;
+}
+
+body.light-mode .navbar {
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+
+body.light-mode .navbar-brand,
+body.light-mode .nav-link {
+  color: #1e293b !important;
+}
+
+/* Project Card Improvements */
+.project-card-wrapper {
+  margin-bottom: 2rem;
+}
+
+.image-placeholder {
+  background: var(--card-bg-secondary, #f8f9fa);
+  border: 2px dashed var(--border-color, #dee2e6);
+  border-radius: 0.5rem;
+}
+
+.skill-badge {
+  margin: 0.25rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.filter-container {
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #dee2e6);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Responsive Grid */
+.projects-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
