@@ -6,127 +6,69 @@
   <title>Portfolio - Frontend Developer</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="css/enhanced-styles.css" rel="stylesheet">
+  <link href="css/animations.css" rel="stylesheet">
+  <link href="css/simple-fixes.css" rel="stylesheet">
   <style>
-    :root {
-      --bg-gradient: linear-gradient(135deg, #1a0033, #000d33);
-      --card-bg: #111;
-      --text-color: #fff;
-      --nav-bg: rgba(0,0,0,0.8);
-    }
-
-    body.light-mode {
-      --bg-gradient: linear-gradient(135deg, #f0f0f0, #d9e4f5);
-      --card-bg: #fff;
-      --text-color: #000;
-      --nav-bg: rgba(255,255,255,0.8);
-    }
-
-    body {
-      background: var(--bg-gradient);
-      color: var(--text-color);
-      scroll-behavior: smooth;
-      transition: background 0.4s, color 0.4s;
-    }
-
-    .navbar {
-      background: var(--nav-bg);
-      transition: background 0.4s;
-    }
-
-    .navbar-brand, .nav-link {
-      color: var(--text-color) !important;
-    }
-
-    section {
-      padding: 80px 0;
-    }
-
-    .hero-title {
-      font-size: 2.5rem;
-      font-weight: bold;
-    }
-
+    /* Minimal compatibility layer - main styles are in external CSS files */
     .skill-btn {
       margin: 0.3rem;
     }
-
-    .card {
-      background-color: var(--card-bg);
-      color: var(--text-color);
-      border: 1px solid #333;
-      transition: 0.3s;
+    
+    /* Ensure proper spacing for dynamically generated content */
+    .projects-grid {
+      display: grid;
+      gap: 1.5rem;
+      width: 100%;
     }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: #0d6efd;
+    
+    /* Mobile-first responsive grid */
+    @media (min-width: 768px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
-
-    .project-description {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 10px;
-      font-size: 0.9rem;
-      text-align: center;
-      border-radius: 0 0 10px 10px;
+    
+    @media (min-width: 1200px) {
+      .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
-
-    body.light-mode .project-description {
-      background-color: rgba(255, 255, 255, 0.8);
-    }
-
-    footer {
-      background: #000;
-      padding: 20px 0;
-      transition: background 0.4s;
-    }
-
-    body.light-mode footer {
-      background: #e0e0e0;
-    }
-
-    footer a {
-      color: #0d6efd;
-      margin: 0 10px;
-      font-size: 1.5rem;
-    }
-
-    footer a:hover {
-      color: var(--text-color);
-    }
-
-    /* Toggle button */
-    .theme-toggle {
-      background: none;
-      border: none;
-      color: var(--text-color);
-      font-size: 1.5rem;
-      cursor: pointer;
-      transition: color 0.3s;
-    }
-
-    .theme-toggle:hover {
-      color: #0d6efd;
+    
+    @media (min-width: 1600px) {
+      .projects-grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1800px;
+        margin: 0 auto;
+      }
     }
   </style>
 </head>
 <body>
 
+<!-- Skip link for accessibility -->
+<a href="#main-content" class="skip-link sr-only sr-only-focusable">Skip to main content</a>
+
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" aria-label="Main navigation">
   <div class="container">
-    <a class="navbar-brand" href="#">Yared Gezahegn</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <a class="navbar-brand" href="#" aria-label="Yared Gezahegn - Portfolio Home">Yared Gezahegn</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation menu">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto align-items-center">
-        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        <li class="nav-item">
-          <button class="theme-toggle ms-3" id="themeToggle" title="Toggle Dark/Light Mode">
-            <i class="bi bi-moon-fill"></i>
+      <ul class="navbar-nav ms-auto align-items-center" role="menubar">
+        <li class="nav-item" role="none"><a class="nav-link" href="#home" role="menuitem">Home</a></li>
+        <li class="nav-item" role="none"><a class="nav-link" href="#about" role="menuitem">About</a></li>
+        <li class="nav-item" role="none"><a class="nav-link" href="#projects" role="menuitem">Projects</a></li>
+        <li class="nav-item" role="none"><a class="nav-link" href="#contact" role="menuitem">Contact</a></li>
+        <li class="nav-item" role="none">
+          <button class="theme-toggle ms-3" id="themeToggle" 
+                  title="Toggle Dark/Light Mode" 
+                  aria-label="Toggle between dark and light theme"
+                  aria-pressed="false">
+            <i class="bi bi-moon-fill" aria-hidden="true"></i>
           </button>
         </li>
       </ul>
@@ -135,222 +77,174 @@
 </nav>
 
 <!-- Home Section -->
-<section id="home" class="d-flex align-items-center">
+<section id="home" class="d-flex align-items-center page-enter" role="banner">
   <div class="container text-center text-lg-start">
     <div class="row align-items-center">
       <div class="col-lg-6">
-        <h1 class="hero-title">Frontend Developer</h1>
-        <p>I build responsive, modern websites using JavaScript, Tailwind, and React.</p>
-        <div>
-          <button class="btn btn-outline-primary skill-btn">React</button>
-          <button class="btn btn-outline-success skill-btn">JavaScript</button>
-          <button class="btn btn-outline-info skill-btn">Bootstrap</button>
-          <button class="btn btn-outline-warning skill-btn">Tailwind</button>
+        <h1 class="hero-title animate-fade-in-up">Frontend Developer</h1>
+        <p class="hero-subtitle animate-fade-in-up animate-delay-200">I build responsive, modern websites using JavaScript, Tailwind, and React.</p>
+        <div id="skills-container" class="animate-fade-in-up animate-delay-400" role="region" aria-label="Technical skills overview">
+          <!-- Skills will be dynamically rendered here -->
         </div>
       </div>
       <div class="col-lg-6 text-center">
-        <img src="mine.png" alt="Developer" class="img-fluid rounded shadow" loading="lazy" style="max-width: 250px;">
+        <img src="mine.jpg" 
+             alt="Yared Gezahegn - Frontend Developer" 
+             class="img-fluid rounded-circle shadow animate-fade-in-right animate-delay-300" 
+             loading="lazy" 
+             style="max-width: 250px; width: 250px; height: 250px; object-fit: cover;"
+             onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDI1MCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyNTAiIGhlaWdodD0iMjUwIiBmaWxsPSIjZjNmNGY2Ii8+CjxwYXRoIGQ9Ik0xMjUgNzVjMjcuNjE0IDAgNTAgMjIuMzg2IDUwIDUwcy0yMi4zODYgNTAtNTAgNTAtNTAtMjIuMzg2LTUwLTUwIDIyLjM4Ni01MCA1MC01MHptMCA4NWMtMTkuMzMgMC0zNSAxNS42Ny0zNSAzNXMxNS42NyAzNSAzNSAzNSAzNS0xNS42NyAzNS0zNS0xNS42Ny0zNS0zNS0zNXoiIGZpbGw9IiM5Y2EzYWYiLz4KPC9zdmc+'; this.alt='Profile image placeholder'; this.classList.add('rounded-circle');">
       </div>
     </div>
   </div>
 </section>
 
 <!-- About Section -->
-<section id="about" class="bg-blue">
+<section id="about" class="section-enter" role="main">
   <div class="container text-center">
-    <h2 class="mb-4">About Me</h2>
-    <p>Hi, I’m Yared Gezahegn, <br/> A passionate frontend developer with a focus on React.js and modern web technologies. I enjoy building clean, responsive, and user-friendly web applications. When I’m not coding, I like exploring new tech trends and creating projects that solve real problems.</p>
-    <div class="mt-3">
-      <a href="resume.pdf" class="btn btn-primary me-2">Download CV</a>
-      <a href="#portfolio" class="btn btn-primary me-2 ">View Projects</a>
+    <h2 class="mb-4 animate-fade-in-up">About Me</h2>
+    <p class="lead animate-fade-in-up animate-delay-200">Hi, I'm Yared Gezahegn, <br/> A passionate frontend developer with a focus on React.js and modern web technologies. I enjoy building clean, responsive, and user-friendly web applications. When I'm not coding, I like exploring new tech trends and creating projects that solve real problems.</p>
+    <div class="mt-4 animate-fade-in-up animate-delay-300">
+      <a href="resume.html" 
+         class="btn btn-primary me-3 hover-lift"
+         aria-label="Download Yared Gezahegn's CV (HTML)"
+         target="_blank"
+         rel="noopener noreferrer">
+        <i class="bi bi-download me-2" aria-hidden="true"></i>Download CV
+      </a>
+      <a href="#projects" 
+         class="btn btn-outline-primary hover-lift"
+         aria-label="View my projects section">
+        <i class="bi bi-eye me-2" aria-hidden="true"></i>View Projects
+      </a>
     </div>
 
     <div class="row mt-5">
-      <div class="col-md-4">
-        <div class="card p-3">
-          <h3>4+</h3>
-          <p>Total Projects</p>
+      <div class="col-md-4 animate-fade-in-up animate-delay-400">
+        <div class="card p-4 hover-lift" role="region" aria-labelledby="projects-stat">
+          <h3 id="project-count" class="display-4 text-primary mb-2" aria-label="Total projects completed">7+</h3>
+          <p class="text-muted mb-0" id="projects-stat">Total Projects</p>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card p-3">
-          <h3>1</h3>
-          <p>Certificates</p>
+      <div class="col-md-4 animate-fade-in-up animate-delay-500">
+        <div class="card p-4 hover-lift" role="region" aria-labelledby="certificates-stat">
+          <h3 class="display-4 text-primary mb-2" aria-label="Certificates earned">1</h3>
+          <p class="text-muted mb-0" id="certificates-stat">Certificates</p>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card p-3">
-          <h3>1+</h3>
-          <p>Years Experience</p>
+      <div class="col-md-4 animate-fade-in-up animate-delay-600">
+        <div class="card p-4 hover-lift" role="region" aria-labelledby="experience-stat">
+          <h3 class="display-4 text-primary mb-2" aria-label="Years of experience">2+</h3>
+          <p class="text-muted mb-0" id="experience-stat">Years Experience</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Portfolio Section -->
-<section id="portfolio">
+<!-- Projects Section -->
+<section id="projects" class="section-enter">
   <div class="container">
-    <h2 class="text-center mb-4">Projects</h2>
-    <div class="row">
-      <!-- Project 1 -->
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="img/amazon.png" class="card-img-top" alt="Cafe Website">
-          <div class="project-description">
-            A static HTML project for a cafe website with responsive layout and modern design.
-          </div>
-          <div  class="card-body text-center d-flex justify-content-center align-items-center gap-4">
-            <a href="https://jaredgezahegn.github.io/AmaZone-Cafe/">View</a>
-             <a href="https://github.com/JaredGezahegn/AmaZone-Cafe" class="btn btn-outline-primary" target="_blank" class="text-light fs-4">
-             <i class="bi bi-github"></i></a>
-          </div>
-        </div>
+    <main id="main-content">
+      <h2 class="text-center mb-5 animate-fade-in-up">Featured Projects</h2>
+      <div class="projects-grid animate-fade-in-up animate-delay-200" id="projects-container">
+        <!-- Projects will be dynamically rendered here -->
       </div>
-
-      <!-- Project 2 -->
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="img/to-do.png" class="card-img-top" alt="To-Do List App">
-          <div class="project-description">
-            A simple To-Do list app using HTML, CSS, and JavaScript with local storage support.
-          </div>
-          <div  class="card-body text-center d-flex justify-content-center align-items-center gap-4">
-            <a href="https://jaredgezahegn.github.io/JS-practice-To-Do-List/">View</a>
-
-            <a href="https://github.com/JaredGezahegn/JS-practice-To-Do-List" class="btn btn-outline-primary" target="_blank" class="text-light fs-4">
-             <i class="bi bi-github"></i></a>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="img/ja.png" class="card-img-top" alt="Haile Selassie Project">
-          <div class="project-description">
-            A historical HTML project focused on Emperor Haile Selassie’s legacy.
-          </div>
-          <div  class="card-body text-center d-flex justify-content-center align-items-center gap-4">
-            <a href="http://jaredgezahegn.github.io/first-project/"  >View</a>
-            <a href="https://github.com/JaredGezahegn/first-project" class="btn btn-outline-primary" target="_blank" class="text-light fs-4">
-             <i class="bi bi-github"></i></a>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="img/All-movie.png" class="card-img-top" alt="Haile Selassie Project">
-          <div class="project-description">
-           A React.js web application that lets users search movies, view details, and enjoy a clean movie listing interface using the OMDB API.
-          </div>
-          <div class="card-body text-center d-flex justify-content-center align-items-center gap-4">
-            <a href="https://jaredgezahegn.github.io/movie_react_app/" >View</a>
-              <a href="https://github.com/JaredGezahegn/movie_react_app.git
-              " class="btn btn-outline-primary" target="_blank" class="text-light fs-4">
-             <i class="bi bi-github"></i></a>
-             
-          </div>
-        </div>
-      </div>
-    </div>
+    </main>
   </div>
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="bg-dark">
- <div class="container">
-  <h2 class="text-center mb-4">Contact Me</h2>
-  <div class="d-flex justify-content-center">
-    <div class="col-md-6">
-      <form>
-        <div class="mb-3">
-          <input type="text" class="form-control" placeholder="Name">
+<section id="contact" class="section-enter">
+  <div class="container">
+    <h2 class="text-center mb-5 animate-fade-in-up">Get In Touch</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card animate-fade-in-up animate-delay-200">
+          <div class="card-body">
+            <form class="contact-form" novalidate aria-label="Contact form">
+              <div class="mb-4">
+                <label for="name" class="form-label">Name <span class="text-danger" aria-label="required">*</span></label>
+                <input type="text" 
+                       class="form-control" 
+                       id="name" 
+                       name="name"
+                       placeholder="Your Name" 
+                       required 
+                       aria-describedby="name-error"
+                       autocomplete="name">
+                <div id="name-error" class="invalid-feedback" role="alert"></div>
+              </div>
+              <div class="mb-4">
+                <label for="email" class="form-label">Email <span class="text-danger" aria-label="required">*</span></label>
+                <input type="email" 
+                       class="form-control" 
+                       id="email" 
+                       name="email"
+                       placeholder="your.email@example.com" 
+                       required 
+                       aria-describedby="email-error"
+                       autocomplete="email">
+                <div id="email-error" class="invalid-feedback" role="alert"></div>
+              </div>
+              <div class="mb-4">
+                <label for="message" class="form-label">Message <span class="text-danger" aria-label="required">*</span></label>
+                <textarea class="form-control" 
+                          id="message" 
+                          name="message"
+                          rows="5" 
+                          placeholder="Tell me about your project..." 
+                          required 
+                          aria-describedby="message-error"></textarea>
+                <div id="message-error" class="invalid-feedback" role="alert"></div>
+              </div>
+              <button type="submit" 
+                      class="btn btn-primary w-100 hover-lift"
+                      aria-describedby="submit-status">
+                <i class="bi bi-send me-2" aria-hidden="true"></i>Send Message
+              </button>
+              <div id="submit-status" class="mt-3" role="status" aria-live="polite"></div>
+            </form>
+          </div>
         </div>
-        <div class="mb-3">
-          <input type="email" class="form-control" placeholder="Email">
-        </div>
-        <div class="mb-3">
-          <textarea class="form-control" rows="4" placeholder="Message"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary w-100">Send</button>
-      </form>
+      </div>
     </div>
-  </div>
-</div>
-
   </div>
 </section>
 
 <!-- Footer -->
-<footer class="text-center">
-  <p>Connect with me:</p>
-  <a href="https://github.com/JaredGezahegn"><i class="bi bi-github"></i></a>
-  <a href="https://www.linkedin.com/in/yared-gezahegn-224368388/"><i class="bi bi-linkedin"></i></a>
+<footer class="text-center animate-fade-in-up" role="contentinfo">
+  <div class="container">
+    <p class="mb-4">Let's connect and build something amazing together!</p>
+    <div class="social-links" role="list" aria-label="Social media links">
+      <a href="https://github.com/JaredGezahegn" 
+         class="hover-lift" 
+         aria-label="Visit Yared's GitHub profile"
+         target="_blank"
+         rel="noopener noreferrer"
+         role="listitem">
+        <i class="bi bi-github" aria-hidden="true"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/yared-gezahegn-224368388/" 
+         class="hover-lift" 
+         aria-label="Visit Yared's LinkedIn profile"
+         target="_blank"
+         rel="noopener noreferrer"
+         role="listitem">
+        <i class="bi bi-linkedin" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="mt-4 pt-4" style="border-top: 1px solid var(--border-color);">
+      <p class="text-small mb-0">&copy; 2024 Yared Gezahegn. Built with passion and modern web technologies.</p>
+    </div>
+  </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-  // 🌙 Dark/Light Mode Toggle
-  const toggleBtn = document.getElementById('themeToggle');
-  const currentTheme = localStorage.getItem('theme');
-
-  if (currentTheme === 'light') {
-    document.body.classList.add('light-mode');
-    toggleBtn.innerHTML = '<i class="bi bi-sun-fill"></i>';
-  }
-
-  toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    const isLight = document.body.classList.contains('light-mode');
-    toggleBtn.innerHTML = isLight ? '<i class="bi bi-sun-fill"></i>' : '<i class="bi bi-moon-fill"></i>';
-    localStorage.setItem('theme', isLight ? 'light' : 'dark');
-  });
-
-  // 💌 Initialize EmailJS
-  (function(){
-    emailjs.init("3fJbP1acWUm4ct5RG");  // ✅ your public key
-  })();
-
-  // 💬 Contact Form Handler
-  const contactForm = document.querySelector("#contact form");
-
-  // create message container
-  const messageBox = document.createElement("div");
-  messageBox.style.marginTop = "15px";
-  contactForm.appendChild(messageBox);
-
-  contactForm.addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    // clear old messages
-    messageBox.innerHTML = "";
-
-    const params = {
-      from_name: this.querySelector('input[placeholder="Name"]').value,
-      from_email: this.querySelector('input[placeholder="Email"]').value,
-      message: this.querySelector('textarea[placeholder="Message"]').value
-    };
-
-    // show loading text
-    messageBox.innerHTML = `<div class="text-info">Sending message...</div>`;
-
-    emailjs.send("service_lg1u5l6", "template_o4h08r9", params)
-      .then(() => {
-        messageBox.innerHTML = `<div class="text-success">✅ Your message has been sent successfully!</div>`;
-        this.reset();
-      })
-      .catch((err) => {
-        console.error("❌ Failed to send message:", err);
-        messageBox.innerHTML = `<div class="text-danger">⚠️ Oops! Something went wrong. Please try again later.</div>`;
-      });
-  });
-</script>
+<!-- Portfolio Enhancement Scripts -->
+<script src="js/projects-simple.js"></script>
+<script src="js/simple-portfolio.js"></script>
 
 </body>
 </html>
