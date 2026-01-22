@@ -17,6 +17,62 @@
       --border-color: #dee2e6;
     }
     
+    /* Print-specific styles for PDF conversion */
+    @media print {
+      body {
+        font-size: 12pt;
+        line-height: 1.4;
+        color: #000 !important;
+        background: white !important;
+      }
+      
+      .container {
+        max-width: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      
+      .page-break {
+        page-break-before: always;
+      }
+      
+      .no-print {
+        display: none !important;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        color: #000 !important;
+        page-break-after: avoid;
+      }
+      
+      .card {
+        border: 1px solid #ddd !important;
+        box-shadow: none !important;
+        margin-bottom: 1rem !important;
+        page-break-inside: avoid;
+      }
+      
+      .btn {
+        border: 1px solid #000 !important;
+        color: #000 !important;
+        background: white !important;
+      }
+      
+      a {
+        color: #000 !important;
+        text-decoration: underline !important;
+      }
+      
+      .text-primary {
+        color: #000 !important;
+      }
+      
+      .bg-primary {
+        background-color: #f0f0f0 !important;
+        color: #000 !important;
+      }
+    }
+    
     * {
       margin: 0;
       padding: 0;
