@@ -25,11 +25,7 @@ const Footer = () => {
           >
             🏴‍☠️ Design inspired by One Piece anime / Luffy 🏴‍☠️
           </motion.p>
-          
-          {/* Luffy Quote */}
-          <p className="text-gray-400 italic text-sm">
-            "I'm gonna be King of the Pirates!"
-          </p>
+        
           
           {/* Social Links */}
           <div className="flex justify-center space-x-6 mt-4">
