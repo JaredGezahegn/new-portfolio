@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFD700;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #DAA520;
+}
+
+/* Paper Texture Background */
+.paper-texture {
+  background-color: #F5E6D3;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.03) 0px,
+      rgba(0, 0, 0, 0.03) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+}
+
+/* Wanted Poster Effect */
+.wanted-poster {
+  background: #F5E6D3;
+  border: 3px solid #8B4513;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.3),
+    inset 0 0 20px rgba(139, 69, 19, 0.1);
+}
+
+/* Light Mode Styles */
+.light {
+  color-scheme: light;
+}
+
+.light body {
+  background: linear-gradient(to bottom, #e0f2fe, #bae6fd, #7dd3fc);
+}
+
+.light .bg-gradient-to-b {
+  background: linear-gradient(to bottom, #e0f2fe, #bae6fd, #7dd3fc);
+}
+
+/* Light mode text colors */
+.light .text-white {
+  color: #1f2937 !important;
+}
+
+.light .text-gray-300 {
+  color: #4b5563 !important;
+}
+
+.light .text-gray-400 {
+  color: #6b7280 !important;
+}
+
+/* Light mode navbar */
+.light nav {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+}
+
+.light nav a {
+  color: #1f2937 !important;
+}
+
+.light nav a:hover {
+  color: #DC143C !important;
+}
+
+/* Light mode pirate gold */
+.light .text-pirate-gold {
+  color: #ea580c !important;
+}
+
+/* Light mode project cards */
+.light .wanted-poster {
+  background: #ffffff;
+  border-color: #d97706;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    inset 0 0 20px rgba(217, 119, 6, 0.05);
+}
+
+.light .bg-gray-800 {
+  background-color: #ffffff !important;
+}
+
+.light .border-gray-700 {
+  border-color: #e5e7eb !important;
+}
+
+/* Light mode skill cards */
+.light .bg-ocean-blue {
+  background-color: #ffffff !important;
+}
+
+.light .border-pirate-gold {
+  border-color: #ea580c !important;
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulsing animation */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 2s ease-in-out infinite;
+}
