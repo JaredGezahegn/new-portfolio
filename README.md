@@ -2,6 +2,8 @@
 
 A One Piece anime-themed portfolio website built with React, Tailwind CSS, and Framer Motion.
 
+🔗 **Live Demo:** [https://one-piece-portfolio.netlify.app/](https://one-piece-portfolio.netlify.app/)
+
 ## Features
 
 - 🏴‍☠️ One Piece themed design with pirate aesthetics
