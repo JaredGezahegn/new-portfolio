@@ -38,7 +38,7 @@ const Footer = () => {
               GitHub
             </a>
             <a
-              href="https://linkedin.com/in/yared-gezahegn"
+              href="https://linkedin.com/in/yared-gezahegn-224368388"
               target="_blank"
               rel="noopener noreferrer"
               className="text-pirate-gold hover:text-pirate-gold-dark transition-colors"
