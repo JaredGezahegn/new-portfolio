@@ -6,6 +6,7 @@ export const personalInfo = {
   email: "jaredgezahegn@gmail.com",
   github: "https://github.com/JaredGezahegn",
   linkedin: "https://linkedin.com/in/yared-gezahegn",
+  resume: "/Yared Gezahegn – NewDesign.pdf",
   bio: "A passionate frontend developer sailing through the Grand Line of code, seeking the One Piece of perfect software! With a crew of technologies and a spirit of adventure, I build applications that make waves in the digital ocean.",
   quote: "I'm gonna be King of the Pirates!",
   crewRole: "Captain & Developer"
@@ -94,6 +95,18 @@ export const skills = [
 export const projects = [
   {
     id: 1,
+    title: "DDU Confession Bot",
+    description: "An anonymous confession bot for Dire Dawa University students to share thoughts and experiences.",
+    longDescription: "A Telegram bot that allows DDU students to submit anonymous confessions, fostering open communication and community engagement within the university.",
+    image: "/img/DDU-confessions.jpg",
+    technologies: ["Python", "Telegram API", "Database"],
+    category: "Bot Application",
+    liveUrl: "https://t.me/DDUVent_bot",
+    githubUrl: "https://github.com/JaredGezahegn/newbot.git",
+    featured: true
+  },
+  {
+    id: 2,
     title: "Telegram E-learning Bot",
     description: "An educational bot for Telegram with database integration and cloud deployment.",
     longDescription: "An intelligent educational bot that provides interactive learning experiences through Telegram, featuring database storage and cloud deployment for scalable learning solutions.",
@@ -105,7 +118,7 @@ export const projects = [
     featured: true
   },
   {
-    id: 2,
+    id: 3,
     title: "E-commerce Application",
     description: "A collaborative e-commerce platform with React frontend and Python backend integration.",
     longDescription: "A full-stack e-commerce solution featuring product catalog, shopping cart functionality, and seamless backend integration for a complete online shopping experience.",
@@ -117,7 +130,7 @@ export const projects = [
     featured: true
   },
   {
-    id: 3,
+    id: 4,
     title: "React Movie Search App",
     description: "A React.js web application that lets users search movies, view details, and enjoy a clean movie listing interface using the OMDB API.",
     longDescription: "A dynamic movie discovery application built with React.js that integrates with the OMDB API to provide users with comprehensive movie information and search capabilities.",
@@ -129,7 +142,7 @@ export const projects = [
     featured: true
   },
   {
-    id: 4,
+    id: 5,
     title: "AmaZone Cafe",
     description: "A static HTML project for a cafe website with responsive layout and modern design.",
     longDescription: "A comprehensive cafe website showcasing modern web development practices with responsive design, cross-browser compatibility, and clean user interface.",
@@ -138,10 +151,10 @@ export const projects = [
     category: "Static Website",
     liveUrl: "https://jaredgezahegn.github.io/AmaZone-Cafe/",
     githubUrl: "https://github.com/JaredGezahegn/AmaZone-Cafe",
-    featured: false
+    featured: true
   },
   {
-    id: 5,
+    id: 6,
     title: "MindKeep",
     description: "A productivity and note-taking application built with React and Tailwind CSS.",
     longDescription: "A modern productivity application that helps users organize their thoughts and tasks with an intuitive interface and responsive design.",
@@ -153,7 +166,7 @@ export const projects = [
     featured: false
   },
   {
-    id: 6,
+    id: 7,
     title: "Haile Selassie Historical Project",
     description: "A historical HTML project focused on Emperor Haile Selassie's legacy.",
     longDescription: "An educational website dedicated to preserving and presenting the historical legacy of Emperor Haile Selassie with rich content and historical documentation.",
@@ -165,7 +178,7 @@ export const projects = [
     featured: false
   },
   {
-    id: 7,
+    id: 8,
     title: "JavaScript To-Do List",
     description: "A simple To-Do list app using HTML, CSS, and JavaScript with local storage support.",
     longDescription: "A practical task management application demonstrating vanilla JavaScript capabilities with persistent local storage and intuitive user interface.",

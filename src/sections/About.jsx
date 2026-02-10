@@ -52,26 +52,15 @@ const About = () => {
                 I approach every challenge with the determination of a true pirate!
               </p>
 
-              {/* Quote */}
-              <motion.div
-                animate={{ scale: [1, 1.02, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="border-l-4 border-pirate-red pl-4 italic text-gray-700"
-              >
-                "{personalInfo.quote}"
-              </motion.div>
-
               {/* CTA Button */}
               <div className="text-center pt-4">
                 <motion.a
-                  href="/resume.html"
+                  href={personalInfo.resume}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="inline-block bg-gradient-to-r from-pirate-red to-pirate-red-dark text-white px-8 py-4 rounded-lg font-bold text-lg border-2 border-pirate-gold hover:shadow-lg hover:shadow-pirate-gold/50 transition-all"
-                  onClick={(e) => {
-                    e.preventDefault()
-                    window.open('/resume.html', '_blank')
-                  }}
                 >
                   📜 View My Resume
                 </motion.a>

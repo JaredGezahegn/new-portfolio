@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yared Gezahegn - Frontend Developer</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.5; color: #333; background: #fff; max-width: 850px; margin: 0 auto; padding: 30px 20px; }
+        header { border-bottom: 2px solid #333; padding-bottom: 15px; margin-bottom: 25px; }
+        h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 5px; letter-spacing: -1px; }
+        .subtitle { font-size: 1.1rem; color: #666; margin-bottom: 12px; }
+        .contact-info { display: flex; flex-wrap: wrap; gap: 20px; font-size: 0.85rem; }
+        .contact-info a { color: #333; text-decoration: none; border-bottom: 1px solid #ddd; }
+        .contact-info a:hover { border-bottom-color: #333; }
+        section { margin-bottom: 25px; }
+        h2 { font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; border-bottom: 1px solid #ddd; padding-bottom: 4px; }
+        .summary { color: #555; font-size: 0.9rem; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
+        .skill-category h3 { font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; color: #333; }
+        .skill-list { list-style: none; font-size: 0.85rem; color: #666; }
+        .skill-list li { padding: 2px 0; }
+        .project { margin-bottom: 20px; }
+        .project-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; }
+        .project-title { font-size: 1rem; font-weight: 600; }
+        .project-tech { font-size: 0.8rem; color: #888; margin-bottom: 5px; }
+        @media print { body { padding: 20px; font-size: 11pt; } h1 { font-size: 24pt; } .contact-info a { border: none; } a { color: #333; } }
+        @media (max-width: 600px) { h1 { font-size: 2rem; } .project-header { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Yared Gezahegn</h1>
+        <div class="subtitle">Frontend Developer</div>
+        <div class="contact-info">
+            <span>📞 <a href="tel:+251941543698">+251 941 543 698</a></span>
+            <span>📧 <a href="mailto:jaredgezahegn@gmail.com">jaredgezahegn@gmail.com</a></span>
+            <span>🔗 <a href="https://github.com/JaredGezahegn" target="_blank">GitHub</a></span>
+            <span>💼 <a href="https://www.linkedin.com/in/yared-gezahegn-224368388/" target="_blank">LinkedIn</a></span>
+        </div>
+    </header>
+
+    <section>
+        <h2>Summary</h2>
+        <p class="summary">
+            Passionate frontend developer with expertise in building responsive, user-friendly web applications. 
+            Experienced in React, JavaScript, and modern CSS frameworks. Strong focus on clean code, 
+            performance optimization, and creating exceptional user experiences.
+        </p>
+    </section>
+
+    <section>
+        <h2>Experience</h2>
+        <div class="project">
+            <div class="project-header">
+                <div class="project-title">Frontend Developer Intern</div>
+                <div style="color: #666; font-size: 0.8rem;">June 2025 - August 2025</div>
+            </div>
+            <div class="project-tech" style="color: #333; font-weight: 600;">SantimPay</div>
+            <ul class="skill-list" style="margin-top: 8px; padding-left: 20px;">
+                <li style="list-style: disc;">Contributed to frontend development projects using modern web technologies</li>
+                <li style="list-style: disc;">Collaborated with development team on user interface improvements and feature implementation</li>
+                <li style="list-style: disc;">Gained hands-on experience with professional development workflows and best practices</li>
+                <li style="list-style: disc;">Participated in code reviews and agile development processes</li>
+                <li style="list-style: disc;">Enhanced skills in React.js, JavaScript, and responsive web design</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Frontend</h3>
+                <ul class="skill-list">
+                    <li>React</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>HTML5 & CSS3</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Styling</h3>
+                <ul class="skill-list">
+                    <li>Tailwind CSS</li>
+                    <li>Bootstrap</li>
+                    <li>Responsive Design</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Tools & Deployment</h3>
+                <ul class="skill-list">
+                    <li>Git & GitHub</li>
+                    <li>Netlify</li>
+                    <li>Vercel</li>
+                    <li>Vite & Webpack</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Backend (Basic)</h3>
+                <ul class="skill-list">
+                    <li>Python</li>
+                    <li>Supabase</li>
+                    <li>Telegram Bot API</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Deployment & Hosting</h2>
+        <p class="summary">
+            Experienced with deploying applications to Netlify, Vercel, and GitHub Pages. 
+            Familiar with CI/CD workflows and version control best practices.
+        </p>
+    </section>
+</body>
+</html>
