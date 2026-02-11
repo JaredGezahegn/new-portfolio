@@ -113,7 +113,7 @@ export const projects = [
     image: "/img/tutor.png",
     technologies: ["Python", "Supabase", "PostgreSQL", "Telegram API"],
     category: "Bot Application",
-    liveUrl: "https://t.me/tutordMe",
+    liveUrl: "https://t.me/tutordMebot",
     githubUrl: "https://github.com/JaredGezahegn/Telegram-E-learning-bot",
     featured: true
   },
