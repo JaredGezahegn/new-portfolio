@@ -6,7 +6,7 @@ export const personalInfo = {
   email: "jaredgezahegn@gmail.com",
   github: "https://github.com/JaredGezahegn",
   linkedin: "https://linkedin.com/in/yared-gezahegn",
-  resume: "/Yared Gezahegn – NewDesign.pdf",
+  resume: "/yared-gezahegn-resume.pdf",
   bio: "A passionate frontend developer sailing through the Grand Line of code, seeking the One Piece of perfect software! With a crew of technologies and a spirit of adventure, I build applications that make waves in the digital ocean.",
   quote: "I'm gonna be King of the Pirates!",
   crewRole: "Captain & Developer"
