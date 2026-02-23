@@ -125,7 +125,7 @@ export const projects = [
     image: "/img/ecommerce.png.png",
     technologies: ["React", "Bootstrap", "Python", "API Integration"],
     category: "Web Application",
-    liveUrl: null,
+    liveUrl: "https://ecomerce-app-iota.vercel.app/",
     githubUrl: "https://github.com/JaredGezahegn/Ecomerce-App",
     featured: true
   },
