@@ -3,6 +3,8 @@ import SectionWrapper from '../components/SectionWrapper'
 import { personalInfo } from '../data/portfolio'
 
 const About = () => {
+  const bioContent = personalInfo.bio || "A full-stack developer sailing the Grand Line of code. 🏴‍☠️";
+
   return (
     <SectionWrapper id="about">
       <motion.div
@@ -33,23 +35,26 @@ const About = () => {
             <div className="space-y-6 text-ink-black">
               <p className="text-lg leading-relaxed">
                 Ahoy! I'm <span className="font-bold text-pirate-red">{personalInfo.name}</span>, 
-                a passionate frontend developer sailing through the vast ocean of technology. 
-                Like Luffy searching for the One Piece, I'm on a quest to master the art of 
-                creating exceptional web applications!
+                a Full-Stack Developer sailing the Grand Line of code. Like Luffy assembling his 
+                crew, I've built my stack from bow to stern — crafting pixel-perfect frontends 
+                and engineering the backend systems that power them. Every application is a ship, 
+                and I make sure both the Sails and the Engine Room are running at full force!
               </p>
 
               <p className="text-lg leading-relaxed">
-                My journey started with HTML and CSS, and has evolved into a grand adventure 
-                involving React, modern JavaScript, and cutting-edge CSS frameworks. Each project is 
-                a new island to explore, each bug a challenge to overcome, and each successful 
-                deployment a treasure worth celebrating!
+                My voyage began on the Sails — HTML, CSS, React, and the winds of the frontend. 
+                But no great pirate stops at the surface. I descended into the Engine Room, 
+                mastering Python and Django to build REST APIs, manage databases, and keep the 
+                ship moving even when the seas get rough. Full-stack means owning the whole 
+                journey, from the first request to the final response.
               </p>
 
               <p className="text-lg leading-relaxed">
-                I believe in writing clean, maintainable code and creating user experiences 
-                that are as smooth as sailing with a favorable wind. Whether it's building 
-                responsive interfaces, crafting beautiful designs, or optimizing performance, 
-                I approach every challenge with the determination of a true pirate!
+                A crew is only as strong as its Secure Communications — and I've studied the 
+                ways of the Revolutionary Army. With JWT authentication, I ensure that only 
+                the right nakama can access protected routes and sensitive data. Whether it's 
+                locking down APIs or managing user sessions, I build with security as a 
+                first-class citizen, not an afterthought.
               </p>
 
               {/* CTA Button */}

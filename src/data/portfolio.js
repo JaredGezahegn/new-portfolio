@@ -1,13 +1,13 @@
 export const personalInfo = {
   name: "Yared Gezahegn",
-  title: "Frontend Developer",
+  title: "Full-Stack Developer",
   bounty: "1,000,000,000",
   image: "/mine.png",
   email: "jaredgezahegn@gmail.com",
   github: "https://github.com/JaredGezahegn",
   linkedin: "https://linkedin.com/in/yared-gezahegn",
   resume: "/yared-gezahegn-resume.pdf",
-  bio: "A passionate frontend developer sailing through the Grand Line of code, seeking the One Piece of perfect software! With a crew of technologies and a spirit of adventure, I build applications that make waves in the digital ocean.",
+  bio: "A full-stack developer who started manning the Sails — crafting frontends with React and Tailwind — and has since descended into the Engine Room, wielding Python and Django to power the ship from within. The Grand Line of code holds no fear for a crew that commands both deck and depths.",
   quote: "I'm gonna be King of the Pirates!",
   crewRole: "Captain & Developer"
 }
