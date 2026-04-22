@@ -21,12 +21,12 @@ Upgrade the portfolio from a Frontend Developer identity to Full-Stack Developer
     - Paragraph 3: JWT/security knowledge framed as "Secure Communications for the Revolutionary Army"
     - Preserve all existing Framer Motion wrappers and Tailwind class names unchanged
     - _Requirements: 2.1, 2.2, 2.3, 5.1, 5.3, 5.4_
-  - [ ] 2.3 Write property test for name data binding (Property 1)
+  - [x] 2.3 Write property test for name data binding (Property 1)
     - **Property 1: For any name string, About renders it**
     - Generate arbitrary non-empty strings for `personalInfo.name`, render `About` with mocked `personalInfo`, assert rendered output contains the generated name
     - **Validates: Requirements 2.2**
 
-- [ ] 3. Add new skill entries to `src/data/portfolio.js`
+- [x] 3. Add new skill entries to `src/data/portfolio.js`
   - Append four entries to the `skills` array (do not modify existing entries):
     - `{ name: "Django", category: "Backend", icon: "🦄", crewRole: "Haki Master", level: 80 }`
     - `{ name: "PostgreSQL", category: "Database", icon: "🐘", crewRole: "Treasure Keeper", level: 75 }`
@@ -42,7 +42,7 @@ Upgrade the portfolio from a Frontend Developer identity to Full-Stack Developer
     - Pick any skill object from the `skills` array; filter `skills` where `s.category === skill.category`; assert the picked skill is in the result
     - **Validates: Requirements 4.6**
 
-- [ ] 4. Add Devil Fruit Registry project and update categories in `src/data/portfolio.js`
+- [x] 4. Add Devil Fruit Registry project and update categories in `src/data/portfolio.js`
   - Append to `projects[]`:
     ```js
     {
@@ -61,7 +61,7 @@ Upgrade the portfolio from a Frontend Developer identity to Full-Stack Developer
   - Append `"Full-Stack Application"` to the `categories` array
   - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8_
 
-- [ ] 5. Add `loading="lazy"` to `<img>` in `src/components/ProjectCard.jsx`
+- [x] 5. Add `loading="lazy"` to `<img>` in `src/components/ProjectCard.jsx`
   - Add `loading="lazy"` attribute to the existing `<img>` tag
   - _Requirements: 6.1_
   - [ ]* 5.1 Write property test for image lazy-loading (Property 4)
@@ -69,7 +69,7 @@ Upgrade the portfolio from a Frontend Developer identity to Full-Stack Developer
     - Generate arbitrary valid project objects (any image path, any title); render `ProjectCard`; assert the rendered `<img>` has `loading="lazy"`
     - **Validates: Requirements 6.1**
 
-- [ ] 6. Set up testing infrastructure and write all property-based tests
+- [x] 6. Set up testing infrastructure and write all property-based tests
   - Install `fast-check`, `vitest`, `@testing-library/react`, and `@testing-library/jest-dom` as dev dependencies
   - Configure `vitest` in `vite.config.js` (add `test` block with `environment: "jsdom"` and `setupFiles`)
   - Create `src/tests/setup.js` importing `@testing-library/jest-dom`
@@ -77,6 +77,6 @@ Upgrade the portfolio from a Frontend Developer identity to Full-Stack Developer
   - Each property test runs a minimum of 100 iterations via `fc.assert(fc.property(...))`
   - _Requirements: 1.1, 2.2, 3.1–3.8, 4.1–4.5, 5.2, 6.1_
 
-- [ ] 7. Final checkpoint — Ensure all tests pass
+- [x] 7. Final checkpoint — Ensure all tests pass
   - Run `npx vitest --run` and confirm all tests pass
   - Ask the user if any questions arise before closing out.

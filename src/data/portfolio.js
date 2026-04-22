@@ -6,9 +6,9 @@ export const personalInfo = {
   email: "jaredgezahegn@gmail.com",
   github: "https://github.com/JaredGezahegn",
   linkedin: "https://linkedin.com/in/yared-gezahegn",
-  resume: "/yared-gezahegn-resume.pdf",
+  resume: "/YG resume.pdf",
   bio: "A full-stack developer who started manning the Sails — crafting frontends with React and Tailwind — and has since descended into the Engine Room, wielding Python and Django to power the ship from within. The Grand Line of code holds no fear for a crew that commands both deck and depths.",
-  quote: "I'm gonna be King of the Pirates!",
+  quote: "I'm gonna be King of the Devs!",
   crewRole: "Captain & Developer"
 }
 
@@ -89,6 +89,34 @@ export const skills = [
     icon: "▲",
     crewRole: "Navigator",
     category: "Deployment"
+  },
+  {
+    name: "Django",
+    level: 80,
+    icon: "🦄",
+    crewRole: "Haki Master",
+    category: "Backend"
+  },
+  {
+    name: "PostgreSQL",
+    level: 75,
+    icon: "🐘",
+    crewRole: "Treasure Keeper",
+    category: "Database"
+  },
+  {
+    name: "Docker",
+    level: 70,
+    icon: "🐳",
+    crewRole: "Shipwright",
+    category: "DevOps"
+  },
+  {
+    name: "JWT Auth",
+    level: 75,
+    icon: "🔐",
+    crewRole: "Revolutionary",
+    category: "Security"
   }
 ]
 
@@ -188,7 +216,19 @@ export const projects = [
     liveUrl: "https://jaredgezahegn.github.io/JS-practice-To-Do-List/",
     githubUrl: "https://github.com/JaredGezahegn/JS-practice-To-Do-List",
     featured: false
+  },
+  {
+    id: 9,
+    title: "Devil Fruit Registry",
+    description: "A CRUD application for cataloguing Devil Fruits — Create, Read, Update, and Delete entries in a One Piece-themed database backed by Django and PostgreSQL.",
+    longDescription: "Django REST Framework backend with PostgreSQL via Supabase, secured with JWT authentication. React frontend consumes the REST API to display and manage Devil Fruit entries.",
+    image: "/img/devil-fruit-registry.png",
+    technologies: ["Django", "PostgreSQL", "Supabase", "Python", "React", "JWT Auth"],
+    category: "Full-Stack Application",
+    liveUrl: null,
+    githubUrl: "https://github.com/JaredGezahegn/devil-fruit-registry",
+    featured: true
   }
 ]
 
-export const categories = ["All", "Web Application", "Static Website", "Bot Application"]
+export const categories = ["All", "Web Application", "Static Website", "Bot Application", "Full-Stack Application"]
