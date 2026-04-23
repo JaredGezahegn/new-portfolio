@@ -21,6 +21,12 @@ export const ThemeProvider = ({ children }) => {
     updateThemeClass(savedTheme)
   }, [])
 
+  // Also run theme setup on mount for deployed environment
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') || 'dark'
+    updateThemeClass(savedTheme)
+  }, [])
+
   const updateThemeClass = (themeValue) => {
     const root = document.documentElement
     if (themeValue === 'light') {
