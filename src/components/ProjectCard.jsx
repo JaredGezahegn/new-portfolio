@@ -12,7 +12,7 @@ const ProjectCard = ({ project, index }) => {
         scale: 1.02,
         boxShadow: "0 20px 40px rgba(0,0,0,0.3)"
       }}
-      className="bg-glass-dark backdrop-blur-md border border-pirate-gold/20 rounded-xl overflow-hidden shadow-2xl transition-all duration-300 hover:border-pirate-gold/40"
+      className="bg-gradient-to-br from-blue-900/80 via-blue-800/70 to-blue-900/80 backdrop-blur-md border border-pirate-gold/20 rounded-xl overflow-hidden shadow-2xl transition-all duration-300 hover:border-pirate-gold/40"
     >
       {/* Project Image */}
       <div className="relative h-48 overflow-hidden group">
@@ -39,7 +39,7 @@ const ProjectCard = ({ project, index }) => {
       </div>
 
       {/* Project Content */}
-      <div className="p-6 bg-glass-light/50">
+      <div className="p-6 bg-gradient-to-br from-blue-800/60 via-blue-700/50 to-blue-800/60 backdrop-blur-sm">
         <motion.h3
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -72,7 +72,7 @@ const ProjectCard = ({ project, index }) => {
               animate={{ scale: 1 }}
               transition={{ delay: 0.6 + i * 0.05 }}
               whileHover={{ scale: 1.1 }}
-              className="px-3 py-1 bg-glass-light backdrop-blur-sm border border-pirate-gold/30 text-pirate-gold rounded-full text-xs font-semibold hover:border-pirate-gold/60 transition-all"
+              className="px-3 py-1 bg-gradient-to-br from-blue-700/80 via-blue-600/70 to-blue-700/80 backdrop-blur-sm border border-pirate-gold/30 text-pirate-gold rounded-full text-xs font-semibold hover:border-pirate-gold/60 transition-all"
             >
               {tech}
             </motion.span>
@@ -124,7 +124,7 @@ const ProjectCard = ({ project, index }) => {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="flex-1 bg-glass-light backdrop-blur-sm border border-pirate-gold/30 text-pirate-gold py-2 px-4 rounded-lg font-bold text-center hover:bg-glass-dark hover:border-pirate-gold/60 transition-all duration-300"
+            className="flex-1 bg-gradient-to-br from-blue-700/80 via-blue-600/70 to-blue-700/80 backdrop-blur-sm border border-pirate-gold/30 text-pirate-gold py-2 px-4 rounded-lg font-bold text-center hover:from-blue-800/90 hover:via-blue-700/80 hover:to-blue-800/90 hover:border-pirate-gold/60 transition-all duration-300"
           >
             💀 Code
           </motion.a>
