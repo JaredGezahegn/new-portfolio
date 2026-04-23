@@ -48,7 +48,7 @@ const About = () => {
           {/* Ocean Scene with Bottle */}
           <div className="max-w-6xl mx-auto relative">
             {/* Sky Background */}
-            <div className="absolute inset-0 bg-gradient-to-b from-sky-400 via-sky-300 to-sky-200 dark:from-gray-800 dark:via-gray-700 dark:to-gray-600 h-64 rounded-t-3xl transition-colors duration-300">
+            <div className="absolute inset-0 bg-gradient-to-b from-sky-300 via-sky-200 to-sky-100 dark:from-gray-700 dark:via-gray-600 dark:to-gray-500 h-64 rounded-t-3xl transition-colors duration-300">
               {/* Clouds */}
               <div className="absolute top-8 left-1/4 w-16 h-8 bg-white/70 dark:bg-gray-400/50 rounded-full blur-sm"></div>
               <div className="absolute top-12 right-1/3 w-20 h-10 bg-white/60 dark:bg-gray-400/40 rounded-full blur-sm"></div>
@@ -56,7 +56,7 @@ const About = () => {
             </div>
 
             {/* Ocean */}
-            <div className="relative h-[420px] bg-gradient-to-b from-blue-500 via-blue-600 to-blue-800 dark:from-blue-900 dark:via-blue-950 dark:to-black rounded-b-3xl transition-colors duration-300">
+            <div className="relative h-[420px] bg-gradient-to-b from-blue-400 via-blue-500 to-blue-700 dark:from-blue-800 dark:via-blue-900 dark:to-blue-950 rounded-b-3xl transition-colors duration-300">
               {/* Waves */}
               <motion.div
                 animate={{ y: [0, -10, 0] }}
@@ -119,7 +119,9 @@ const About = () => {
                     {/* Message inside */}
                     <div className="absolute bottom-20 left-1/2 -translate-x-1/2 w-[100px] h-[120px] bg-amber-100/90 rounded-md shadow-inner rotate-6 flex items-center justify-center">
                       <div className="text-[10px] text-gray-700 leading-tight px-2 text-center font-bold">
-                        Click Me
+                        Help
+                        <br />
+                        Find Me
                       </div>
                     </div>
 
