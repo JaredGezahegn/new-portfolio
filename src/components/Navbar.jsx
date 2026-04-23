@@ -1,7 +1,9 @@
 import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
+import { useTheme } from '../contexts/ThemeContext'
 
-const Navbar = ({ theme, toggleTheme }) => {
+const Navbar = () => {
+  const { theme, toggleTheme } = useTheme()
   const [isOpen, setIsOpen] = useState(false)
   const [activeLink, setActiveLink] = useState('')
   const audioRef = useRef(null)
@@ -20,14 +22,14 @@ const Navbar = ({ theme, toggleTheme }) => {
       audioRef.current = new Audio('/sound/anime-arm-stretch-one-piece-luffy-sound-effect-for-editing.mp3')
       audioRef.current.volume = 0.3
     }
-    
+
     // Reset audio to beginning and play
     audioRef.current.currentTime = 0
     audioRef.current.play().catch(err => console.log('Audio play failed:', err))
 
     // Set active link for animation
     setActiveLink(href)
-    
+
     // Wait for animation then scroll
     setTimeout(() => {
       const element = document.querySelector(href)
@@ -40,7 +42,7 @@ const Navbar = ({ theme, toggleTheme }) => {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-ocean-blue/95 backdrop-blur-md border-b-2 border-pirate-gold shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-glass-dark backdrop-blur-lg border-b border-pirate-gold/30 shadow-lg transition-all duration-300">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
@@ -76,13 +78,13 @@ const Navbar = ({ theme, toggleTheme }) => {
                 {link.name}
               </motion.button>
             ))}
-            
+
             {/* Theme Toggle */}
             <motion.button
               onClick={toggleTheme}
-              whileHover={{ scale: 1.1, rotate: 180 }}
-              whileTap={{ scale: 0.9 }}
-              className="p-2 rounded-full bg-pirate-gold text-ocean-blue hover:bg-pirate-gold-dark transition-colors"
+              whileHover={{ scale: 1.05, rotate: 180 }}
+              whileTap={{ scale: 0.95 }}
+              className="p-3 rounded-full bg-glass-light backdrop-blur-md border border-pirate-gold/30 text-pirate-gold hover:bg-glass-dark hover:border-pirate-gold/50 transition-all duration-300 shadow-lg"
             >
               {theme === 'dark' ? '☀️' : '🌙'}
             </motion.button>
@@ -93,12 +95,12 @@ const Navbar = ({ theme, toggleTheme }) => {
             {/* Theme Toggle Mobile */}
             <motion.button
               onClick={toggleTheme}
-              whileTap={{ scale: 0.9 }}
-              className="p-2 rounded-full bg-pirate-gold text-ocean-blue"
+              whileTap={{ scale: 0.95 }}
+              className="p-2 rounded-full bg-glass-light backdrop-blur-md border border-pirate-gold/30 text-pirate-gold hover:bg-glass-dark hover:border-pirate-gold/50 transition-all duration-300"
             >
               {theme === 'dark' ? '☀️' : '🌙'}
             </motion.button>
-            
+
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-white focus:outline-none"

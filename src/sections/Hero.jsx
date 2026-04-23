@@ -66,19 +66,6 @@ const Hero = () => {
               alt={personalInfo.name}
               className="max-w-sm w-full rounded-2xl border-4 border-pirate-gold shadow-2xl shadow-pirate-gold/30"
             />
-            
-            {/* Bounty Badge */}
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 1, type: "spring" }}
-              className="absolute -bottom-4 -right-4 bg-pirate-red border-4 border-pirate-gold rounded-full p-4 shadow-xl"
-            >
-              <p className="text-white font-pirate text-center">
-                <span className="text-sm block">Bounty</span>
-                <span className="text-xl">฿{personalInfo.bounty}</span>
-              </p>
-            </motion.div>
           </motion.div>
         </motion.div>
       </div>

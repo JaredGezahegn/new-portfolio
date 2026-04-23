@@ -20,7 +20,7 @@ const SkillCard = ({ skill, index }) => {
       <p className="text-pirate-gold text-xs mb-3 font-semibold">{skill.crewRole}</p>
       
       {/* Progress Bar */}
-      <div className="w-full bg-gray-700 rounded-full h-2 mb-2">
+      <div className="w-full bg-gray-700 rounded-full h-2">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${skill.level}%` }}
@@ -29,9 +29,6 @@ const SkillCard = ({ skill, index }) => {
           className="bg-gradient-to-r from-pirate-gold to-pirate-red h-2 rounded-full"
         />
       </div>
-      
-      {/* Percentage */}
-      <p className="text-white text-sm font-bold">{skill.level}%</p>
     </motion.div>
   )
 }

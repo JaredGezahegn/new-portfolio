@@ -2,6 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced focus styles for keyboard navigation */
+@layer base {
+  *:focus-visible {
+    outline: 2px solid theme('colors.pirate-gold');
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  
+  /* Skip to content link for accessibility */
+  .skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: theme('colors.pirate-red');
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 100;
+  }
+  
+  .skip-to-content:focus {
+    top: 6px;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.pirate-gold');
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.pirate-gold-dark');
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 12px;

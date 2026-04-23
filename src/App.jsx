@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { ThemeProvider } from './contexts/ThemeContext'
 import Navbar from './components/Navbar'
 import Hero from './sections/Hero'
 import About from './sections/About'
@@ -8,39 +8,21 @@ import Contact from './sections/Contact'
 import Footer from './components/Footer'
 
 function App() {
-  const [theme, setTheme] = useState('dark')
-
-  useEffect(() => {
-    // Load theme from localStorage
-    const savedTheme = localStorage.getItem('theme') || 'dark'
-    setTheme(savedTheme)
-    if (savedTheme === 'light') {
-      document.documentElement.classList.add('light')
-    }
-  }, [])
-
-  const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark'
-    setTheme(newTheme)
-    localStorage.setItem('theme', newTheme)
-    
-    if (newTheme === 'light') {
-      document.documentElement.classList.add('light')
-    } else {
-      document.documentElement.classList.remove('light')
-    }
-  }
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-ocean-blue via-blue-900 to-ocean-blue text-white">
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen bg-gradient-to-br from-ocean-blue via-blue-900 to-ink-black dark:from-gray-900 dark:via-gray-800 dark:to-black text-white font-sans transition-all duration-300">
+        <a href="#hero" className="skip-to-content">
+          Skip to main content
+        </a>
+        <Navbar />
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+        <Footer />
+      </div>
+    </ThemeProvider>
   )
 }
 
