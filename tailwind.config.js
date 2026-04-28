@@ -6,6 +6,17 @@ export default {
   ],
   darkMode: 'class',
   theme: {
+    screens: {
+      'xs': '475px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+      // Custom breakpoints for better mobile experience
+      'touch': { 'raw': '(hover: none)' },
+      'mouse': { 'raw': '(hover: hover)' },
+    },
     extend: {
       colors: {
         'pirate-red': '#DC143C',
@@ -37,6 +48,28 @@ export default {
           'accent': 'hsl(var(--accent))',
           'accent-foreground': 'hsl(var(--accent-foreground))',
         }
+      },
+      fontSize: {
+        'fluid-xs': ['clamp(0.75rem, 2vw, 0.875rem)', { lineHeight: '1.5' }],
+        'fluid-sm': ['clamp(0.875rem, 2.5vw, 1rem)', { lineHeight: '1.5' }],
+        'fluid-base': ['clamp(1rem, 3vw, 1.125rem)', { lineHeight: '1.6' }],
+        'fluid-lg': ['clamp(1.125rem, 3.5vw, 1.25rem)', { lineHeight: '1.6' }],
+        'fluid-xl': ['clamp(1.25rem, 4vw, 1.5rem)', { lineHeight: '1.5' }],
+        'fluid-2xl': ['clamp(1.5rem, 5vw, 2rem)', { lineHeight: '1.3' }],
+        'fluid-3xl': ['clamp(1.875rem, 6vw, 2.5rem)', { lineHeight: '1.2' }],
+        'fluid-4xl': ['clamp(2.25rem, 7vw, 3.5rem)', { lineHeight: '1.1' }],
+        'fluid-5xl': ['clamp(2.5rem, 8vw, 4.5rem)', { lineHeight: '1.1' }],
+        'fluid-6xl': ['clamp(3rem, 9vw, 6rem)', { lineHeight: '1' }],
+      },
+      spacing: {
+        '18': '4.5rem',
+        '88': '22rem',
+        '128': '32rem',
+        'fluid-xs': 'clamp(0.5rem, 2vw, 1rem)',
+        'fluid-sm': 'clamp(1rem, 3vw, 1.5rem)',
+        'fluid-md': 'clamp(1.5rem, 4vw, 2rem)',
+        'fluid-lg': 'clamp(2rem, 5vw, 3rem)',
+        'fluid-xl': 'clamp(3rem, 6vw, 4rem)',
       },
       fontFamily: {
         'sans': ['Inter', 'system-ui', 'sans-serif'],
@@ -70,4 +103,15 @@ export default {
     },
   },
   plugins: [],
+  // Enable container queries
+  container: {
+    center: true,
+    padding: {
+      DEFAULT: '1rem',
+      sm: '2rem',
+      lg: '4rem',
+      xl: '5rem',
+      '2xl': '6rem',
+    },
+  },
 }

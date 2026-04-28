@@ -49,20 +49,21 @@ const Projects = () => {
   }, [activeCategory, searchTerm])
 
   return (
-    <SectionWrapper id="projects">
+    <SectionWrapper id="projects" className="px-4 xs:px-6">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
+        className="container mx-auto max-w-7xl"
       >
         {/* Section Title */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-fluid-lg">
           <motion.h2
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-pirate text-pirate-gold mb-4"
+            className="text-4xl md:text-5xl lg:text-6xl font-pirate text-pirate-gold mb-fluid-sm"
           >
             My Adventures
           </motion.h2>
@@ -71,7 +72,7 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-gray-300"
+            className="fluid-xl text-gray-300"
           >
             Treasures I've discovered on my journey
           </motion.p>
@@ -83,7 +84,7 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="max-w-2xl mx-auto mb-8"
+          className="max-w-2xl mx-auto mb-fluid-md"
         >
           <div className="relative">
             <input
@@ -91,7 +92,7 @@ const Projects = () => {
               placeholder="Search projects by title, description, or technologies..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-6 py-4 pl-12 bg-glass-dark backdrop-blur-md border border-pirate-gold/30 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-pirate-gold/60 focus:ring-2 focus:ring-pirate-gold/20 transition-all duration-300"
+              className="w-full px-6 py-4 pl-12 bg-glass-dark backdrop-blur-md border border-pirate-gold/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pirate-gold/60 focus:ring-2 focus:ring-pirate-gold/20 transition-all duration-300 touch-manipulation text-lg"
             />
             <svg
               className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
@@ -104,7 +105,7 @@ const Projects = () => {
             {searchTerm && (
               <button
                 onClick={() => setSearchTerm('')}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-pirate-red/20 touch-manipulation"
               >
                 ✕
               </button>
@@ -118,7 +119,7 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
+          className="flex flex-wrap justify-center gap-3 mb-fluid-lg"
         >
           {categories.map((category) => (
             <motion.button
@@ -126,7 +127,7 @@ const Projects = () => {
               onClick={() => setActiveCategory(category)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`px-6 py-3 rounded-xl font-bold transition-all duration-300 border ${activeCategory === category
+              className={`px-6 py-3 rounded-xl font-bold transition-all duration-300 border touch-manipulation min-h-[3rem] flex items-center justify-center ${activeCategory === category
                 ? 'bg-pirate-red text-white border-pirate-gold shadow-lg shadow-pirate-red/50'
                 : 'bg-glass-light/30 backdrop-blur-sm border-pirate-gold/30 text-white hover:border-pirate-gold/60 hover:bg-glass-light/50'
                 }`}
@@ -136,10 +137,10 @@ const Projects = () => {
           ))}
         </motion.div>
 
-        {/* Projects Grid */}
+        {/* Projects Grid with Container Queries */}
         <motion.div
           layout
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 xs:gap-8"
         >
           {isLoading ? (
             // Show skeleton loaders while loading
@@ -161,7 +162,7 @@ const Projects = () => {
             animate={{ opacity: 1 }}
             className="text-center py-12"
           >
-            <p className="text-2xl text-gray-300">
+            <p className="fluid-2xl text-gray-300">
               No adventures found in this category... yet! 🏴‍☠️
             </p>
           </motion.div>

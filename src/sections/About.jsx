@@ -45,116 +45,48 @@ const About = () => {
             </motion.p>
           </div>
 
-          {/* Ocean Scene with Bottle */}
-          <div className="max-w-6xl mx-auto relative">
-            {/* Sky Background */}
-            <div className="absolute inset-0 bg-gradient-to-b from-sky-300 via-sky-200 to-sky-100 dark:from-gray-700 dark:via-gray-600 dark:to-gray-500 h-64 rounded-t-3xl transition-colors duration-300">
-              {/* Clouds */}
-              <div className="absolute top-8 left-1/4 w-16 h-8 bg-white/70 dark:bg-gray-400/50 rounded-full blur-sm"></div>
-              <div className="absolute top-12 right-1/3 w-20 h-10 bg-white/60 dark:bg-gray-400/40 rounded-full blur-sm"></div>
-              <div className="absolute top-16 left-1/2 w-12 h-6 bg-white/50 dark:bg-gray-400/30 rounded-full blur-sm"></div>
-            </div>
-
-            {/* Ocean */}
-            <div className="relative h-[420px] bg-gradient-to-b from-blue-400 via-blue-500 to-blue-700 dark:from-blue-800 dark:via-blue-900 dark:to-blue-950 rounded-b-3xl transition-colors duration-300">
-              {/* Waves */}
+          {/* Bottle Only */}
+          <div className="max-w-6xl mx-auto relative flex justify-center items-center min-h-[400px]">
+            {/* Bottle Floating */}
+            <motion.div
+              animate={{ y: [0, -8, 0], rotate: [-2, 2, -2] }}
+              transition={{ duration: 4, repeat: Infinity }}
+              className="relative"
+            >
               <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-blue-400/30 dark:from-blue-800/30 to-transparent"
-              ></motion.div>
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
-                className="absolute top-2 left-0 right-0 h-6 bg-gradient-to-b from-blue-300/20 dark:from-blue-700/20 to-transparent"
-              ></motion.div>
-
-              {/* Seaweed */}
-              <div className="absolute bottom-0 left-8 w-4 h-32 bg-gradient-to-t from-green-800 dark:from-green-950 to-green-600 dark:to-green-800 rounded-t-full opacity-70">
-                <motion.div
-                  animate={{ rotate: [-5, 5, -5] }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                  className="w-full h-full"
-                ></motion.div>
-              </div>
-              <div className="absolute bottom-0 left-20 w-3 h-24 bg-gradient-to-t from-green-700 dark:from-green-900 to-green-500 dark:to-green-700 rounded-t-full opacity-60">
-                <motion.div
-                  animate={{ rotate: [5, -5, 5] }}
-                  transition={{ duration: 3.5, repeat: Infinity, delay: 1 }}
-                  className="w-full h-full"
-                ></motion.div>
-              </div>
-              <div className="absolute bottom-0 right-12 w-4 h-28 bg-gradient-to-t from-green-800 dark:from-green-950 to-green-600 dark:to-green-800 rounded-t-full opacity-70">
-                <motion.div
-                  animate={{ rotate: [-3, 3, -3] }}
-                  transition={{ duration: 3.8, repeat: Infinity, delay: 0.7 }}
-                  className="w-full h-full"
-                ></motion.div>
-              </div>
-              <div className="absolute bottom-0 right-28 w-3 h-20 bg-gradient-to-t from-green-700 dark:from-green-900 to-green-500 dark:to-green-700 rounded-t-full opacity-60">
-                <motion.div
-                  animate={{ rotate: [4, -4, 4] }}
-                  transition={{ duration: 3.2, repeat: Infinity, delay: 1.5 }}
-                  className="w-full h-full"
-                ></motion.div>
-              </div>
-
-              {/* Bottle Floating */}
-              <motion.div
-                animate={{ y: [0, -8, 0], rotate: [-2, 2, -2] }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="absolute top-[20%] left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                onClick={() => setIsModalOpen(true)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="relative cursor-pointer"
               >
-                <motion.div
-                  onClick={() => setIsModalOpen(true)}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="relative cursor-pointer"
-                >
-                  {/* Bottle */}
-                  <div className="relative w-[180px] h-[360px]">
-                    {/* Body */}
-                    <div className="absolute bottom-0 w-full h-[260px] bg-white/20 backdrop-blur-md rounded-[70px] border border-white/40 shadow-2xl" />
+                {/* Bottle Image */}
+                <div className="relative w-[180px] h-[360px]">
+                  <img
+                    src="/img/bottle.png"
+                    alt="Message in a Bottle"
+                    className="w-full h-full object-contain drop-shadow-2xl"
+                  />
 
-                    {/* Message inside */}
-                    <div className="absolute bottom-20 left-1/2 -translate-x-1/2 w-[100px] h-[120px] bg-amber-100/90 rounded-md shadow-inner rotate-6 flex items-center justify-center">
-                      <div className="text-[10px] text-gray-700 leading-tight px-2 text-center font-bold">
-                        Help
-                        <br />
-                        Find Me
-                      </div>
+                  {/* Message overlay to maintain the "Help Find Me" text */}
+                  <div className="absolute bottom-20 left-1/2 -translate-x-1/2 w-[80px] h-[100px] bg-amber-100/90 rounded-md shadow-inner rotate-6 flex items-center justify-center pointer-events-none">
+                    <div className="text-[8px] text-gray-700 leading-tight px-2 text-center font-bold">
+                      Help
+                      <br />
+                      Find Me
                     </div>
-
-                    {/* Neck */}
-                    <div className="absolute top-12 left-1/2 -translate-x-1/2 w-[60px] h-[120px] bg-white/20 backdrop-blur-md border border-white/40 rounded-[30px]" />
-
-                    {/* Cork */}
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[50px] h-[40px] bg-gradient-to-b from-amber-700 via-amber-600 to-amber-800 rounded-md shadow-md border border-amber-900">
-                      {/* Cork texture */}
-                      <div className="absolute inset-0 opacity-30">
-                        <div className="h-full w-full bg-gradient-to-b from-transparent via-amber-800 to-transparent"></div>
-                      </div>
-                      <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-8 h-1 bg-amber-900 rounded-full"></div>
-                    </div>
-
-                    {/* Glass highlight */}
-                    <div className="absolute left-5 top-24 w-6 h-40 bg-white/30 rounded-full blur-sm" />
-                    {/* Additional highlights */}
-                    <div className="absolute right-4 top-16 w-4 h-20 bg-white/20 rounded-full blur-sm" />
-                    <div className="absolute left-8 top-32 w-2 h-12 bg-white/25 rounded-full blur-xs" />
                   </div>
-                </motion.div>
-              </motion.div>
 
-              {/* Ocean Floor */}
-              <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-blue-900/50 dark:from-black/70 to-transparent"></div>
-            </div>
+                  {/* Glass highlight effect */}
+                  <div className="absolute left-4 top-20 w-4 h-32 bg-white/20 rounded-full blur-sm pointer-events-none"></div>
+                </div>
+              </motion.div>
+            </motion.div>
 
             {/* Instruction */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="relative z-10 text-center mt-8"
+              className="absolute bottom-0 left-0 right-0 text-center mt-8"
             >
               <p className="text-gray-300 dark:text-gray-400 text-sm animate-pulse">
                 🍾 Click the bottle to read the message

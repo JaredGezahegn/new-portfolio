@@ -56,102 +56,20 @@ const Skills = () => {
                 onClick={() => setIsTreasureOpen(true)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                animate={isTreasureOpen ? { scale: 1.1, rotate: 2 } : { scale: 1, rotate: 0 }}
+                transition={{ duration: 0.3 }}
                 className="relative cursor-pointer"
               >
-                {/* Treasure Chest Body */}
-                <div className="relative">
-                  {/* Chest Body */}
-                  <div className="relative w-72 h-52 md:w-80 md:h-56">
-                    <div className="absolute bottom-0 w-full h-[180px] bg-[radial-gradient(circle_at_30%_30%,#4a3426,#2c1e15)] rounded-md shadow-2xl border-4 border-yellow-700">
-                      {/* Vertical Straps with Gradients */}
-                      <div className="absolute left-6 top-0 h-full w-6 bg-gradient-to-b from-yellow-400 to-yellow-700 border border-yellow-800" />
-                      <div className="absolute right-6 top-0 h-full w-6 bg-gradient-to-b from-yellow-400 to-yellow-700 border border-yellow-800" />
-                      <div className="absolute left-1/2 -translate-x-1/2 top-0 h-full w-6 bg-gradient-to-b from-yellow-400 to-yellow-700 border border-yellow-800" />
+                {/* Treasure Chest Image */}
+                <div className="relative w-72 h-52 md:w-80 md:h-56">
+                  <img
+                    src="/img/treasure-chest.png"
+                    alt="Treasure Chest"
+                    className="w-full h-full object-contain drop-shadow-2xl"
+                  />
 
-                      {/* Studs with Gradients */}
-                      {[...Array(6)].map((_, i) => (
-                        <div
-                          key={i}
-                          className="absolute w-4 h-4 bg-gradient-to-br from-yellow-400 to-yellow-700 rounded-full shadow-md border border-yellow-600"
-                          style={{ top: `${20 + i * 25}px`, left: "12px" }}
-                        />
-                      ))}
-                      {[...Array(6)].map((_, i) => (
-                        <div
-                          key={i}
-                          className="absolute w-4 h-4 bg-gradient-to-br from-yellow-400 to-yellow-700 rounded-full shadow-md border border-yellow-600"
-                          style={{ top: `${20 + i * 25}px`, right: "12px" }}
-                        />
-                      ))}
-
-                      {/* Skull Emoji */}
-                      <div className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-24 h-24 bg-gradient-to-br from-gray-300 to-gray-100 rounded-full flex items-center justify-center shadow-xl border-2 border-gray-500">
-                        <span className="text-6xl">☠️</span>
-                      </div>
-
-                      {/* Curved Pearls */}
-                      <div className="absolute left-10 top-2">
-                        {[...Array(8)].map((_, i) => (
-                          <div
-                            key={i}
-                            className="w-2 h-2 bg-white rounded-full shadow-sm"
-                            style={{
-                              position: 'absolute',
-                              top: `${i * 8}px`,
-                              left: `${Math.sin(i * 0.3) * 3}px`
-                            }}
-                          />
-                        ))}
-                      </div>
-                      <div className="absolute right-10 top-2">
-                        {[...Array(8)].map((_, i) => (
-                          <div
-                            key={i}
-                            className="w-2 h-2 bg-white rounded-full shadow-sm"
-                            style={{
-                              position: 'absolute',
-                              top: `${i * 8}px`,
-                              right: `${Math.sin(i * 0.3) * 3}px`
-                            }}
-                          />
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Lid */}
-                    <motion.div
-                      animate={isTreasureOpen ? { rotateX: -110 } : { rotateX: 0 }}
-                      transition={{ duration: 0.8, type: "spring" }}
-                      className="absolute top-0 w-full h-[120px] bg-[radial-gradient(circle_at_30%_30%,#4a3426,#2c1e15)] rounded-t-[100%] border-4 border-yellow-700 overflow-hidden"
-                      style={{ transformOrigin: 'bottom center' }}
-                    >
-                      {/* Gold Rim */}
-                      <div className="absolute top-0 w-full h-6 bg-gradient-to-b from-yellow-400 to-yellow-700 border-b border-yellow-800 shadow-md"></div>
-
-                      {/* Better Gems */}
-                      <div className="absolute top-2 left-4 flex gap-2">
-                        <div className="w-4 h-4 rounded-full bg-gradient-to-br from-red-300 to-red-600 ring-2 ring-white/40 shadow-sm"></div>
-                        <div className="w-4 h-4 rounded-full bg-gradient-to-br from-blue-300 to-blue-600 ring-2 ring-white/40 shadow-sm"></div>
-                        <div className="w-4 h-4 rounded-full bg-gradient-to-br from-green-300 to-green-600 ring-2 ring-white/40 shadow-sm"></div>
-                        <div className="w-4 h-4 rounded-full bg-gradient-to-br from-purple-300 to-purple-600 ring-2 ring-white/40 shadow-sm"></div>
-                        <div className="w-4 h-4 rounded-full bg-gradient-to-br from-yellow-300 to-yellow-600 ring-2 ring-white/40 shadow-sm"></div>
-                      </div>
-
-                      {/* Coins with Gradients */}
-                      <div className="absolute top-6 w-full flex flex-wrap px-4 gap-1">
-                        {[...Array(20)].map((_, i) => (
-                          <div
-                            key={i}
-                            className="w-3 h-3 bg-gradient-to-br from-yellow-400 to-yellow-700 rounded-full shadow-sm border border-yellow-600"
-                          />
-                        ))}
-                      </div>
-
-                      {/* Highlight Strip */}
-                      <div className="absolute top-8 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-                    </motion.div>
-                  </div>
-
+                  {/* Glow effect when hovered */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-yellow-400/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-lg"></div>
                 </div>
               </motion.div>
 

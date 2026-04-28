@@ -43,26 +43,26 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-glass-dark backdrop-blur-lg border-b border-pirate-gold/30 shadow-lg transition-all duration-300">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 xs:px-6">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-pirate text-pirate-gold"
+            className="text-xl xs:text-2xl font-pirate text-pirate-gold touch-manipulation"
           >
             🏴‍☠️ Yared's Crew
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center space-x-6">
             {navLinks.map((link) => (
               <motion.button
                 key={link.href}
                 onClick={() => handleLinkClick(link.href)}
                 animate={activeLink === link.href ? {
-                  scaleX: 2.5,
-                  scaleY: 0.7,
+                  scaleX: 1.1,
+                  scaleY: 0.9,
                 } : {
                   scaleX: 1,
                   scaleY: 1,
@@ -72,8 +72,9 @@ const Navbar = () => {
                   stiffness: 100,
                   damping: 8
                 }}
-                whileHover={{ scale: 1.1 }}
-                className="text-white hover:text-pirate-gold transition-colors font-semibold cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="text-white hover:text-pirate-gold transition-colors font-semibold cursor-pointer touch-manipulation py-2 px-1"
               >
                 {link.name}
               </motion.button>
@@ -84,26 +85,27 @@ const Navbar = () => {
               onClick={toggleTheme}
               whileHover={{ scale: 1.05, rotate: 180 }}
               whileTap={{ scale: 0.95 }}
-              className="p-3 rounded-full bg-glass-light backdrop-blur-md border border-pirate-gold/30 text-pirate-gold hover:bg-glass-dark hover:border-pirate-gold/50 transition-all duration-300 shadow-lg"
+              className="p-3 rounded-full bg-glass-light backdrop-blur-md border border-pirate-gold/30 text-pirate-gold hover:bg-glass-dark hover:border-pirate-gold/50 transition-all duration-300 shadow-lg touch-manipulation min-w-[3rem] min-h-[3rem] flex items-center justify-center"
             >
               {theme === 'dark' ? '☀️' : '🌙'}
             </motion.button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-4">
+          {/* Mobile/Tablet Menu Button */}
+          <div className="lg:hidden flex items-center space-x-3">
             {/* Theme Toggle Mobile */}
             <motion.button
               onClick={toggleTheme}
               whileTap={{ scale: 0.95 }}
-              className="p-2 rounded-full bg-glass-light backdrop-blur-md border border-pirate-gold/30 text-pirate-gold hover:bg-glass-dark hover:border-pirate-gold/50 transition-all duration-300"
+              className="p-2.5 rounded-full bg-glass-light backdrop-blur-md border border-pirate-gold/30 text-pirate-gold hover:bg-glass-dark hover:border-pirate-gold/50 transition-all duration-300 touch-manipulation min-w-[2.5rem] min-h-[2.5rem] flex items-center justify-center"
             >
               {theme === 'dark' ? '☀️' : '🌙'}
             </motion.button>
 
-            <button
+            <motion.button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white focus:outline-none"
+              whileTap={{ scale: 0.95 }}
+              className="text-white focus:outline-none p-2 rounded-lg hover:bg-pirate-red/20 transition-colors touch-manipulation min-w-[3rem] min-h-[3rem] flex items-center justify-center"
             >
               <svg
                 className="w-6 h-6"
@@ -120,41 +122,41 @@ const Navbar = () => {
                   <path d="M4 6h16M4 12h16M4 18h16" />
                 )}
               </svg>
-            </button>
+            </motion.button>
           </div>
         </div>
 
         {/* Mobile Menu */}
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="md:hidden pb-4"
-          >
-            {navLinks.map((link) => (
+        <motion.div
+          initial={false}
+          animate={isOpen ? {
+            height: 'auto',
+            opacity: 1,
+            transition: { duration: 0.3, ease: "easeInOut" }
+          } : {
+            height: 0,
+            opacity: 0,
+            transition: { duration: 0.2, ease: "easeInOut" }
+          }}
+          className="overflow-hidden lg:hidden"
+        >
+          <div className="pb-4">
+            {navLinks.map((link, index) => (
               <motion.button
                 key={link.href}
                 onClick={() => handleLinkClick(link.href)}
-                animate={activeLink === link.href ? {
-                  scaleX: 2,
-                  scaleY: 0.7,
-                } : {
-                  scaleX: 1,
-                  scaleY: 1,
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 8
-                }}
-                className="block w-full text-left py-2 px-4 text-white hover:bg-pirate-red/20 hover:text-pirate-gold transition-colors"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.1 }}
+                whileTap={{ scale: 0.98 }}
+                className={`block w-full text-left py-4 px-4 text-white hover:bg-pirate-red/20 hover:text-pirate-gold transition-all touch-manipulation text-lg font-medium rounded-lg mb-2 ${activeLink === link.href ? 'bg-pirate-red/30 text-pirate-gold' : ''
+                  }`}
               >
                 {link.name}
               </motion.button>
             ))}
-          </motion.div>
-        )}
+          </div>
+        </motion.div>
       </div>
     </nav>
   )
