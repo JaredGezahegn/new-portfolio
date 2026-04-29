@@ -61,7 +61,7 @@ const Skills = () => {
                 className="relative cursor-pointer"
               >
                 {/* Treasure Chest Image */}
-                <div className="relative w-72 h-52 md:w-80 md:h-56">
+                <div className="relative w-96 h-72 md:w-[400px] md:h-[300px]">
                   <img
                     src="/img/treasure-chest.png"
                     alt="Treasure Chest"
